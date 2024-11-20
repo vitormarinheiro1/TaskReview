@@ -1,6 +1,12 @@
 <x-layout title="Tarefas">
     <a href="{{ route('tasks.create') }}" class="btn btn-dark mb-2">Adicionar</a>
 
+    @isset($mensagemSucesso)
+    <div class="alert alert-success">
+        {{ $mensagemSucesso }}
+    </div>
+    @endisset
+
     <table class="table border">
         <thead>
             <tr>
