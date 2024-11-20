@@ -1,8 +1,8 @@
 <form action="{{ $action }}" method="post">
     @csrf
-    @isset($titulo)
+    @if($update)
     @method('PUT')
-    @endisset
+    @endif
     <div class="mb-3">
         <label class="form-label" for="titulo">Titulo:</label>
         <input class="form-control" type="text" id="titulo" name="titulo" @isset($titulo)value="{{ $titulo }}"@endisset>

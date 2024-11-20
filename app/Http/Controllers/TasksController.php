@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TasksFormRequest;
 use App\Models\Task;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,7 @@ class TasksController extends Controller
         return view('tasks.create');
     }
 
-    public function store(Request $request)
+    public function store(TasksFormRequest $request)
     {
         $task = Task::create($request->all());
 
@@ -41,7 +42,7 @@ class TasksController extends Controller
         return view('tasks.edit')->with('task', $task);
     }
 
-    public function update(Task $task, Request $request)
+    public function update(Task $task, TasksFormRequest $request)
     {
         $task->fill($request->all());
         $task->save();
