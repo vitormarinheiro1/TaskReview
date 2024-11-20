@@ -25,11 +25,16 @@
                     <td>{{ $task->descricao }}</td>
                     <td>{{ $task->status }}</td>
                     <td>
-                        <form action="{{ route('tasks.destroy', $task->id)}}" method="post">
+                        <span class="d-flex">
+                            <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-primary btn-sm">
+                                Editar
+                            </a>
+                        <form action="{{ route('tasks.destroy', $task->id)}}" method="post" class="ms-2">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">X</button>
+                            <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
                         </form>
+                        </span>
                     </td>
                 </tr>
             @endforeach

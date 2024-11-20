@@ -7,4 +7,4 @@ Route::get('/', function () {
     return redirect('/tasks');
 });
 
-Route::resource('/tasks', controller: TasksController::class)->only(['index', 'create', 'store', 'destroy']);
+Route::resource('/tasks', controller: TasksController::class)->except(['show']);

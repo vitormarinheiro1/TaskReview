@@ -30,13 +30,23 @@ class TasksController extends Controller
 
     public function destroy(Task $task)
     {
-        
-        $task->delete();
-            
 
-        return to_route('tasks.index')->with('mensagem.sucesso', "Task '$task->titulo' removida com sucesso!");
-                
+        $task->delete();
+
+        return to_route('tasks.index')->with('mensagem.sucesso', "Tarefa '$task->titulo' removida com sucesso!");
     }
 
-      
+    public function edit(Task $task)
+    {
+        return view('tasks.edit')->with('task', $task);
+    }
+
+    public function update(Task $task, Request $request)
+    {
+        $task->fill($request->all());
+        $task->save();
+
+        return to_route('tasks.index')->with('mensagem.sucesso', "Tarefa '$task->titulo' atualizada com sucesso!");
+    }
+
 }
