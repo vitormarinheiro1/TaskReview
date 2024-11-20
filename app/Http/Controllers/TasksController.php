@@ -9,7 +9,7 @@ class TasksController extends Controller
 {
     public function index()
     {
-        $tasks = Task::query()->orderBy('status')->get();
+        $tasks = Task::query()->orderBy('id')->get();
 
         return view('tasks.index')->with('tasks', $tasks);
     }
@@ -23,6 +23,14 @@ class TasksController extends Controller
     {
         Task::create($request->all());
 
-        return redirect('/tasks');
+        return to_route('tasks.index');
+    }
+
+    public function destroy(Request $request)
+    {
+        
+        Task::destroy($request->task);
+
+        return to_route( 'tasks.index');
     }
 }
