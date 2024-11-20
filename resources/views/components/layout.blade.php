@@ -12,6 +12,13 @@
 </head>
 
 <body>
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ route('tasks.index') }}">TaskReview</a>
+
+            <a href="{{ route('logout') }}">Sair</a>
+        </div>
+    </nav>
     <div class="container">
         <h1 class="mt-3">{{ $title }}</h1>
 

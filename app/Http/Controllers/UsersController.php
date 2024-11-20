@@ -25,4 +25,11 @@ class UsersController extends Controller
 
         return to_route('tasks.index');
     }
+
+    public function destroy()
+    {
+        Auth::logout();
+        
+        return to_route('login');
+    }
 }
