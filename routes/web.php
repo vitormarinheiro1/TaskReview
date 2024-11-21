@@ -10,7 +10,10 @@ Route::get('/', function () {
     return redirect('/tasks');
 })->middleware(Autenticador::class);
 
-Route::resource('/tasks', controller: TasksController::class)->except(['show']);
+Route::middleware(Autenticador::class)->group(function () {
+    Route::resource('/tasks', controller: TasksController::class)->except(['show']);
+});
+
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store'])->name('signin');

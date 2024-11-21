@@ -16,7 +16,9 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('tasks.index') }}">TaskReview</a>
 
-            <a href="{{ route('logout') }}">Sair</a>
+            @auth
+                <a href="{{ route('logout') }}">Sair</a>
+            @endauth
         </div>
     </nav>
     <div class="container">
