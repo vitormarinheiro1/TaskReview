@@ -1,8 +1,8 @@
 <h1 id="layout">🎨 Layout</h1>
 
 <p align="center">
-    <img src="./public/telalogin.png" alt="Image 1" width="400px">
-    <img src="./public/telatarefas.png" alt="Image 2" width="400px">
+    <img src="./public/imagens/telalogin.png" alt="Image 1" width="400px">
+    <img src="./public/imagens/telatarefas.png" alt="Image 2" width="400px">
 </p>
 
 ## Projeto: Sistema de Gerenciamento de Tarefas
